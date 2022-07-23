@@ -10,9 +10,10 @@ function DogPics() {
     fetch("https://dog.ceo/api/breeds/image/random/3")
       .then((r) => r.json())
       .then((data) => {
+        //setting state in the useEffect callback
         console.log("setState");
         setImages(data.message);
-      });
+      }, []);
   });
 
   console.log("render");
